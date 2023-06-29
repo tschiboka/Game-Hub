@@ -1,11 +1,16 @@
-import { Image, HStack, Text } from "@chakra-ui/react";
+import { Image, HStack } from "@chakra-ui/react";
 import Logo from "../assets/Logo/logo.webp";
+import ThemeToggle from "./ThemeToggle";
 
 export default function NavBar() {
     return (
-        <HStack>
-            <Image src={Logo} alt="Logo" boxSize="70px" />
-            <Text>Nav Bar</Text>
+        <HStack
+            justifyContent={"space-between"}
+            padding="10px"
+            borderBottom="1px"
+        >
+            <Image src={Logo} alt="Logo" boxSize="60px" />
+            <ThemeToggle />
         </HStack>
     );
 }
