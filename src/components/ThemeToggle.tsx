@@ -6,6 +6,7 @@ export default function ThemeToggle() {
         <header>
             <HStack>
                 <Switch
+                    id="theme-toggle-switch"
                     onChange={toggleColorMode}
                     colorScheme="green"
                     isChecked={colorMode === "dark"}
