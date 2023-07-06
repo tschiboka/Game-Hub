@@ -3,7 +3,11 @@ import Logo from "../assets/Logo/logo.webp";
 import ThemeToggle from "./ThemeToggle";
 import SearchInput from "./SearchInput";
 
-export default function NavBar() {
+interface Props {
+    onSearch: (searchText: string) => void;
+}
+
+export default function NavBar({ onSearch }: Props) {
     return (
         <HStack
             justifyContent={"space-between"}
@@ -11,7 +15,7 @@ export default function NavBar() {
             borderBottom="1px"
         >
             <Image src={Logo} alt="Logo" boxSize="60px" />
-            <SearchInput />
+            <SearchInput onSearch={onSearch} />
             <ThemeToggle />
         </HStack>
     );
