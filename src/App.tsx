@@ -1,3 +1,4 @@
+import "./index.css";
 import {
     Box,
     ColorModeScript,
@@ -20,6 +21,7 @@ export interface GameQuery {
     genre: Genre | null;
     platform: Platform | null;
     sortOrder: string;
+    searchText: string;
 }
 
 function App() {
@@ -42,7 +44,11 @@ function App() {
                 }}
             >
                 <GridItem area="nav" bg="">
-                    <NavBar></NavBar>
+                    <NavBar
+                        onSearch={(searchText) =>
+                            setGameQuery({ ...gameQuery, searchText })
+                        }
+                    ></NavBar>
                 </GridItem>
                 <Show above="lg">
                     <GridItem area="aside" bg="" paddingX="10px">

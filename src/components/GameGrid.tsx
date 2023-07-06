@@ -1,9 +1,10 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import useGames from "../hooks/useGames";
 import { GameQuery } from "../App";
+import GameHeading from "./GameHeading";
 
 interface Props {
     gameQuery: GameQuery;
@@ -20,6 +21,7 @@ export default function GameGrid({ gameQuery }: Props) {
                     {error}
                 </Text>
             )}
+            <GameHeading gameQuery={gameQuery} />
             <SimpleGrid
                 columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
                 padding="10px"
